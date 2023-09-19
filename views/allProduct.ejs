@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Barcode</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach(product => { %>
+            <tr>
+                <td><%= product.name %></td>
+                <td><%= product.barcode %></td>
+                <td>$<%= product.priceBeforeDiscount %></td>
+                <td><%= product.status %></td>
+                <td>
+                    <!-- Add buttons for Edit and Delete -->
+                    <a href="/edit/<%= product._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/delete/<%= product._id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
